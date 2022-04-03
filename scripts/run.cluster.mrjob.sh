@@ -1,6 +1,6 @@
 #!/bin/sh
 name=${1:-cluster-mrjob}
-mrjob=${2:-test_mapper.py}
+mrjob=${2:-find_null_val.mrjob.py}
 inputfile=${3:-hdfs:///data/2015.sample.10.csv}
 outputfile=${4:-/data/$name.out}
 
