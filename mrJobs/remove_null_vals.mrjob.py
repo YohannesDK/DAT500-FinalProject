@@ -25,21 +25,12 @@ class Remove_Null_Vals(MRJob):
             for line in lines:
                 col, _ = line.split("\t")
                 col = col.replace('"', "") 
-                self.find_null_val_out.append((col, self.features.index(col)))
+                self.find_null_val_out.append(self.features.index(col))
         f.close()
     
     def reducer(self, _, rows):
-        for row in rows:
-            for col in self.find_null_val_out:
-                idx = col[1]
-                if idx-self.deleted_count > 0 and idx-self.deleted_count < len(row)-1:
-
-                    #TODO må fikse logikken her, må slette for hver rad, samtidig som vi opprettholder 
-                    # indeksene (indeksene endrer seg for hver sletting)
-
-                    del row[idx-self.deleted_count]
-                    self.deleted_count += 1
-            yield _, row
+        for row in rows: 
+            yield _, [val for idx, val in enumerate(row) if idx not in self.find_null_val_out]
 
 if __name__ == '__main__':
   Remove_Null_Vals.run()
