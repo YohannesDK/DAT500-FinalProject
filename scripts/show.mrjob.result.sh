@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 filename=${1:-find_null_val}
-hadoop fs -text /data/$filename.out/part* | less
+hadoop fs -text /data/$filename.output/part* | less

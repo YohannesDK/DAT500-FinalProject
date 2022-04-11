@@ -11,8 +11,34 @@ To run mrjob on the hadoop cluster use: (args are optional, have default run def
 ```
 ./scripts/run.cluster.mrjob.sh <nameOfMrjob> <mrjobfile> <inputfile> <outputfile> 
 ```
+---
 
-To run **remove_null_vals.mrjob.py** (localy -> from mrjobs folder):
+## Running Localy
+
+To run **find_null_val.mrjob.py**:
 ```
-python3 remove_null_vals.mrjob.py -r inline ../data/2015.sample.10.csv --find_null_val_out ~/DAT500-FinalProject/data/local.mrjob.output
+./scripts/run.mrjob.sh -env local -name find_null_val -inputfile 2015.sample.10.csv
+```
+
+To run **remove_null_vals.mrjob.py**:
+```
+./scripts/run.mrjob.sh -env local -name remove_null_vals -inputfile 2015.sample.10.csv
+```
+---
+
+## Running on Hadoop Cluster
+
+To run **find_null_val.mrjob.py**:
+```
+./scripts/run.mrjob.sh -env cluster -name find_null_val -inputfile 2015.sample.10.csv
+```
+
+To run **remove_null_vals.mrjob.py**:
+```
+./scripts/run.mrjob.sh -env cluster -name remove_null_vals -inputfile 2015.sample.10.csv
+```
+
+To view output run,
+```
+./scripts/show.mrjob.results.sh <mrjob-name>
 ```

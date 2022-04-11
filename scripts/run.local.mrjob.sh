@@ -1,14 +1,31 @@
-#!/bin/sh
+#!/bin/bash
 path=~/DAT500-FinalProject
 
-mrjob=${1:-$path/mrJobs/find_null_val.mrjob.py}
-outputfile=${2-local.mrjob.output}
-inputfile=${3:-$path/data/2015.sample.10.csv}
+while [ $# -gt 0 ]; do
+    if [[ $1 == "-"* ]]; then
+        v="${1/-/}"
+        declare "$v"="$2"
+        export $v
+        shift
+    fi
+    shift
+done
 
+name="${name:-find_null_val}"
+mrjob=${mrjob:-$path/mrJobs/find_null_val.mrjob.py}
+inputfile=${inputfile:-$path/data/2015.sample.10.csv}
+outputfile=${outputfile-local.mrjob.output}
 outputPath=$path/data/$outputfile
+
+remove_mrjob_args=${mrjob_args:---cols_to_remove "$path/data/find_null_val.output"}
 
 echo "Creating outputfile"
 touch $outputPath
 
 echo "Running (local) mrjob with $mrjob, file $inputfile"
-python3 $mrjob -r inline $inputfile > $outputPath
+
+if [[ "$name" == "remove_null_vals" ]]; then
+    python3 $mrjob -r inline $inputfile > $outputPath $remove_mrjob_args
+else 
+    python3 $mrjob -r inline $inputfile > $outputPath
+fi
