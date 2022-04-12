@@ -24,6 +24,11 @@ To run **remove_null_vals.mrjob.py**:
 ```
 ./scripts/run.mrjob.sh -env local -name remove_null_vals -inputfile 2015.sample.10.csv
 ```
+
+To run **find_mean_mode.mrjob.py**:
+```
+./scripts/run.mrjob.sh -env local -name find_mean_mode -inputfile remove_null_vals.output
+```
 ---
 
 ## Running on Hadoop Cluster

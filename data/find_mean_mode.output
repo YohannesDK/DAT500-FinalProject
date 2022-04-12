@@ -1,0 +1,4 @@
+["categorical", "ORIGIN"]	[[["MCO", 1]], [["LGA", 1], ["FLL", 1], ["IAH", 1]], [["IAH", 1], ["FLL", 1], ["DFW", 1]], [["BOS", 1], ["PBI", 1]]]
+["categorical", "FL_DATE"]	[[["2015-01-01", 1]], [["2015-01-01", 3]], [["2015-01-01", 3]], [["2015-01-01", 2]]]
+["categorical", "OP_CARRIER"]	[[["NK", 1]], [["NK", 3]], [["NK", 3]], [["NK", 2]]]
+["categorical", "DEST"]	[[["FLL", 1]], [["FLL", 1], ["MCO", 1], ["LAS", 1]], [["ORD", 1], ["STT", 1], ["BWI", 1]], [["PBI", 1], ["BOS", 1]]]

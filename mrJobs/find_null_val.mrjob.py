@@ -42,7 +42,7 @@ class Find_Null_Vals(MRJob):
     value = list(value)
     n_values = len(value)
     n_null_values = sum(value)
-    if n_null_values > 0:
+    if n_null_values / n_values >= 0.9:
       yield(key, (n_null_values, n_values, n_null_values / n_values))
 
 

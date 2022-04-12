@@ -41,8 +41,7 @@ class Remove_Null_Vals(MRJob):
     
     def reducer(self, _, rows):
         for row in rows: 
-            if row != self.features: # skip header
-                yield None, [val for idx, val in enumerate(row) if idx not in self.cols_idx_to_remove]
+            yield None, [val for idx, val in enumerate(row) if idx not in self.cols_idx_to_remove]
 
 if __name__ == '__main__':
   Remove_Null_Vals.run()
