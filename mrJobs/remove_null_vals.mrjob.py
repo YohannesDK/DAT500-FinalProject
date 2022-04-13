@@ -2,8 +2,8 @@
 from mr3px.csvprotocol import CsvProtocol 
 from mrjob.job import MRJob
 
-import pandas as pd
-import numpy as np
+from datetime import datetime
+import sys
 
 class Remove_Null_Vals(MRJob):
     INPUT_PROTOCOL = CsvProtocol
@@ -44,4 +44,8 @@ class Remove_Null_Vals(MRJob):
             yield None, [val for idx, val in enumerate(row) if idx not in self.cols_idx_to_remove]
 
 if __name__ == '__main__':
-  Remove_Null_Vals.run()
+    start_time = datetime.now()
+    Remove_Null_Vals.run()
+    end_time = datetime.now()
+    elapsed_time = end_time - start_time
+    sys.stderr.write("Time taken: " + str(elapsed_time))

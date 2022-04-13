@@ -6,6 +6,9 @@ from re import compile as re_compile
 import pandas as pd
 import numpy as np
 
+from datetime import datetime
+import sys
+
 # https://stackoverflow.com/questions/37996471/element-wise-test-of-numpy-array-is-numeric
 # https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float/25299619#25299619
 
@@ -58,4 +61,8 @@ class Find_Mean_Mode(MRJob):
             yield key[1], max(self.combine_categorical_counts(values), key=lambda x: x[1])[0]
 
 if __name__ == '__main__':
+    start_time = datetime.now()
     Find_Mean_Mode.run()
+    end_time = datetime.now()
+    elapsed_time = end_time - start_time
+    sys.stderr.write("Time taken: " + str(elapsed_time))

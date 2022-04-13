@@ -7,10 +7,8 @@ from mr3px.csvprotocol import CsvProtocol
 import pandas as pd
 import numpy as np
 
-import logging
-
-from io import StringIO
-import csv
+from datetime import datetime
+import sys
 
 class Find_Null_Vals(MRJob):
   INPUT_PROTOCOL = CsvProtocol
@@ -47,4 +45,8 @@ class Find_Null_Vals(MRJob):
 
 
 if __name__ == '__main__':
+  start_time = datetime.now()
   Find_Null_Vals.run()
+  end_time = datetime.now()
+  elapsed_time = end_time - start_time
+  sys.stderr.write("Time taken: " + str(elapsed_time))
