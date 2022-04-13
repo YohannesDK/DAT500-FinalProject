@@ -1,4 +1,26 @@
-["categorical", "ORIGIN"]	[[["MCO", 1]], [["LGA", 1], ["FLL", 1], ["IAH", 1]], [["IAH", 1], ["FLL", 1], ["DFW", 1]], [["BOS", 1], ["PBI", 1]]]
-["categorical", "FL_DATE"]	[[["2015-01-01", 1]], [["2015-01-01", 3]], [["2015-01-01", 3]], [["2015-01-01", 2]]]
-["categorical", "OP_CARRIER"]	[[["NK", 1]], [["NK", 3]], [["NK", 3]], [["NK", 2]]]
-["categorical", "DEST"]	[[["FLL", 1]], [["FLL", 1], ["MCO", 1], ["LAS", 1]], [["ORD", 1], ["STT", 1], ["BWI", 1]], [["PBI", 1], ["BOS", 1]]]
+["numeric", "CRS_ELAPSED_TIME"]	151.0
+["numeric", "DEP_DELAY"]	3.11
+["numeric", "DEP_TIME"]	1353.67
+["numeric", "DISTANCE"]	921.67
+["numeric", "DIVERTED"]	0.0
+["numeric", "LATE_AIRCRAFT_DELAY"]	0.0
+["numeric", "NAS_DELAY"]	16.0
+["numeric", "OP_CARRIER_FL_NUM"]	199.89
+["numeric", "AIR_TIME"]	121.89
+["numeric", "ARR_DELAY"]	-2.78
+["numeric", "ARR_TIME"]	1601.0
+["numeric", "CANCELLED"]	0.0
+["numeric", "CARRIER_DELAY"]	0.0
+["numeric", "CRS_ARR_TIME"]	1599.33
+["numeric", "CRS_DEP_TIME"]	1346.11
+["numeric", "SECURITY_DELAY"]	0.0
+["numeric", "TAXI_IN"]	7.67
+["numeric", "TAXI_OUT"]	15.56
+["numeric", "WEATHER_DELAY"]	0.0
+["numeric", "WHEELS_OFF"]	1378.11
+["numeric", "WHEELS_ON"]	1584.44
+["categorical", "DEST"]	["FLL", 2]
+["categorical", "FL_DATE"]	["2015-01-01", 9]
+["categorical", "OP_CARRIER"]	["NK", 9]
+["categorical", "ORIGIN"]	["FLL", 2]
+["numeric", "ACTUAL_ELAPSED_TIME"]	145.11

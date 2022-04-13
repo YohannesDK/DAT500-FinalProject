@@ -47,34 +47,14 @@ class Find_Mean_Mode(MRJob):
 
                 yield ["categorical", self.features[idx]], (val, 1)
     
-    # maybe we can create a combiner that joines equal [value, count] pairs togehter
-    def combiner(self, key, values):
-        """
-        we will get a value like,
-        [["FLL", 1], ["FLL", 1], ["MCO", 1], ["LAS", 1], ["ORD", 1], ["STT", 1], ["BWI", 1]]
-        we need to combine equal values, and sum up the counts
-        """
-
+    def reducer(self, key, values):
+        # numerical values 
         if key[0] == "numeric":
-            # yield key, values
-            return
+            yield key, round(np.mean(list(values)), 2)
         
         # categorical values
         if key[0] == "categorical":
-            # we need to combine equal values, and sum up the counts
-            yield key, self.combine_categorical_counts(values)
-
-    def reducer(self, key, values):
-        values = list(values)
-
-        # numerical values 
-        if key[0] == "numeric":
-            return
-        #     yield key[0], round(np.mean(values), 2)
-        
-        # categorical values
-        # if len(key) == 2:
-        yield key, values
+            yield key, max(self.combine_categorical_counts(values), key=lambda x: x[1])
 
 if __name__ == '__main__':
     Find_Mean_Mode.run()
