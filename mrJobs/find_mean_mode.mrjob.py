@@ -16,6 +16,7 @@ class Find_Mean_Mode(MRJob):
     def configure_args(self):
         super(Find_Mean_Mode, self).configure_args()
         self.features = ["FL_DATE","OP_CARRIER","OP_CARRIER_FL_NUM","ORIGIN","DEST","CRS_DEP_TIME","DEP_TIME","DEP_DELAY","TAXI_OUT","WHEELS_OFF","WHEELS_ON","TAXI_IN","CRS_ARR_TIME","ARR_TIME","ARR_DELAY","CANCELLED","DIVERTED","CRS_ELAPSED_TIME","ACTUAL_ELAPSED_TIME","AIR_TIME","DISTANCE","CARRIER_DELAY","WEATHER_DELAY","NAS_DELAY","SECURITY_DELAY","LATE_AIRCRAFT_DELAY"]
+        # possible optimixation only find mean mode for empty values
     
     def is_number_regex(self, s):
         if re_match("^\d+?\.\d+?$", s) is None:
@@ -50,11 +51,11 @@ class Find_Mean_Mode(MRJob):
     def reducer(self, key, values):
         # numerical values 
         if key[0] == "numeric":
-            yield key, round(np.mean(list(values)), 2)
+            yield key[1], round(np.mean(list(values)), 2)
         
         # categorical values
         if key[0] == "categorical":
-            yield key, max(self.combine_categorical_counts(values), key=lambda x: x[1])
+            yield key[1], max(self.combine_categorical_counts(values), key=lambda x: x[1])[0]
 
 if __name__ == '__main__':
     Find_Mean_Mode.run()

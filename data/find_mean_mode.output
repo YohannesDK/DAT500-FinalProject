@@ -1,26 +1,26 @@
-["numeric", "CRS_ELAPSED_TIME"]	151.0
-["numeric", "DEP_DELAY"]	3.11
-["numeric", "DEP_TIME"]	1353.67
-["numeric", "DISTANCE"]	921.67
-["numeric", "DIVERTED"]	0.0
-["numeric", "LATE_AIRCRAFT_DELAY"]	0.0
-["numeric", "NAS_DELAY"]	16.0
-["numeric", "OP_CARRIER_FL_NUM"]	199.89
-["numeric", "AIR_TIME"]	121.89
-["numeric", "ARR_DELAY"]	-2.78
-["numeric", "ARR_TIME"]	1601.0
-["numeric", "CANCELLED"]	0.0
-["numeric", "CARRIER_DELAY"]	0.0
-["numeric", "CRS_ARR_TIME"]	1599.33
-["numeric", "CRS_DEP_TIME"]	1346.11
-["numeric", "SECURITY_DELAY"]	0.0
-["numeric", "TAXI_IN"]	7.67
-["numeric", "TAXI_OUT"]	15.56
-["numeric", "WEATHER_DELAY"]	0.0
-["numeric", "WHEELS_OFF"]	1378.11
-["numeric", "WHEELS_ON"]	1584.44
-["categorical", "DEST"]	["FLL", 2]
-["categorical", "FL_DATE"]	["2015-01-01", 9]
-["categorical", "OP_CARRIER"]	["NK", 9]
-["categorical", "ORIGIN"]	["FLL", 2]
-["numeric", "ACTUAL_ELAPSED_TIME"]	145.11
+"CRS_ELAPSED_TIME"	151.0
+"DEP_DELAY"	3.11
+"DEP_TIME"	1353.67
+"DISTANCE"	921.67
+"DIVERTED"	0.0
+"LATE_AIRCRAFT_DELAY"	0.0
+"NAS_DELAY"	16.0
+"OP_CARRIER_FL_NUM"	199.89
+"AIR_TIME"	121.89
+"ARR_DELAY"	-2.78
+"ARR_TIME"	1601.0
+"CANCELLED"	0.0
+"CARRIER_DELAY"	0.0
+"CRS_ARR_TIME"	1599.33
+"CRS_DEP_TIME"	1346.11
+"SECURITY_DELAY"	0.0
+"TAXI_IN"	7.67
+"TAXI_OUT"	15.56
+"WEATHER_DELAY"	0.0
+"WHEELS_OFF"	1378.11
+"WHEELS_ON"	1584.44
+"DEST"	"FLL"
+"FL_DATE"	"2015-01-01"
+"OP_CARRIER"	"NK"
+"ORIGIN"	"FLL"
+"ACTUAL_ELAPSED_TIME"	145.11
