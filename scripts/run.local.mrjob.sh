@@ -30,5 +30,5 @@ if [[ "$name" == "remove_null_vals" ]]; then
 elif [[ "$name" == "fill_null_vals" ]]; then
     python3 $mrjob -r inline $inputfile > $outputPath $fill_mrjob_args
 else 
-    python3 -m cProfile $mrjob -r inline $inputfile > $outputPath
+    python3 $mrjob -r inline $inputfile > $outputPath
 fi

@@ -16,7 +16,7 @@ To run mrjob on the hadoop cluster use: (args are optional, have default run def
 
 To run some profiling (from /DAT500-FinalProject):
 ```
-    python3 -m mrJobs.profiling.profile
+python3 -m mrJobs.profiling.profile
 ```
 ---
 
