@@ -15,7 +15,7 @@ env="${env:-local}"
 name="${name:-find_null_val}"
 inputfile="${inputfile:-2015.sample.10.csv}"
 
-mrjob="$basepath/mrJobs/$name.mrjob.py"
+mrjob="$basepath/mrJobs/$name.py"
 outputfile="$name.output"
 
 if [[ "$env" == "local" ]]; then

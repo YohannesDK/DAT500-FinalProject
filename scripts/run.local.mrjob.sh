@@ -12,7 +12,7 @@ while [ $# -gt 0 ]; do
 done
 
 name="${name:-find_null_val}"
-mrjob=${mrjob:-$path/mrJobs/find_null_val.mrjob.py}
+mrjob=${mrjob:-$path/mrJobs/find_null_val.py}
 inputfile=${inputfile:-$path/data/2015.sample.10.csv}
 outputfile=${outputfile-local.mrjob.output}
 outputPath=$path/data/$outputfile
@@ -30,5 +30,5 @@ if [[ "$name" == "remove_null_vals" ]]; then
 elif [[ "$name" == "fill_null_vals" ]]; then
     python3 $mrjob -r inline $inputfile > $outputPath $fill_mrjob_args
 else 
-    python3 $mrjob -r inline $inputfile > $outputPath
+    python3 -m cProfile $mrjob -r inline $inputfile > $outputPath
 fi

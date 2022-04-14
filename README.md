@@ -13,6 +13,11 @@ To run mrjob on the hadoop cluster use: (args are optional, have default run def
 ```
 ./scripts/run.cluster.mrjob.sh <nameOfMrjob> <mrjobfile> <inputfile> <outputfile> 
 ```
+
+To run some profiling (from /DAT500-FinalProject):
+```
+    python3 -m mrJobs.profiling.profile
+```
 ---
 
 ## Running Localy

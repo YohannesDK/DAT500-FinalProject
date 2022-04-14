@@ -10,7 +10,7 @@ while [ $# -gt 0 ]; do
 done
 
 name=${name:-cluster-mrjob}
-mrjob=${mrjob:-find_null_val.mrjob.py}
+mrjob=${mrjob:-find_null_val.py}
 inputfile=${inputfile:-hdfs:///data/2015.sample.10.csv}
 outputfile=${outputfile:-/data/$name.out}
 
