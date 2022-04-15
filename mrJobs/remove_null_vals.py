@@ -26,7 +26,7 @@ class Remove_Null_Vals(MRJob):
     
     def reducer_init(self):
         self.features = ["FL_DATE", "OP_CARRIER", "OP_CARRIER_FL_NUM", "ORIGIN", "DEST", "CRS_DEP_TIME", "DEP_TIME", "DEP_DELAY", "TAXI_OUT", "WHEELS_OFF", "WHEELS_ON", "TAXI_IN", "CRS_ARR_TIME", "ARR_TIME", "ARR_DELAY", "CANCELLED", "CANCELLATION_CODE", "DIVERTED", "CRS_ELAPSED_TIME", "ACTUAL_ELAPSED_TIME", "AIR_TIME", "DISTANCE", "CARRIER_DELAY", "WEATHER_DELAY", "NAS_DELAY", "SECURITY_DELAY", "LATE_AIRCRAFT_DELAY", "Unnamed: 27"] 
-        self.cols_idx_to_remove = []
+        self.cols_idx_to_remove = set()
 
         if self.cols_to_remove == None:
             return
@@ -36,7 +36,8 @@ class Remove_Null_Vals(MRJob):
             for line in lines:
                 col, _ = line.split("\t")
                 col = col.replace('"', "") 
-                self.cols_idx_to_remove.append(self.features.index(col))
+                self.cols_idx_to_remove.add(self.features.index(col))
+                # self.cols_idx_to_remove.append(self.features.index(col))
         f.close()
     
     def reducer(self, _, rows):
