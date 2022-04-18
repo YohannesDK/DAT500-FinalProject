@@ -12,7 +12,7 @@ while [ $# -gt 0 ]; do
 done
 
 env="${env:-local}"
-file"${file:-2015.sample.10.csv}"
+file="${file:-2015.sample.10.csv}"
 
 echo "Running find_null_val.py"
 "$basepath/scripts/run.mrjob.sh" -env "$env" -name "find_null_val" -inputfile "$file" && \

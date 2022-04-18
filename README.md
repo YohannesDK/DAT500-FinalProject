@@ -3,6 +3,12 @@ Final Project in DAT500 - Airline Delay Predictions, using Hadoop, MrJob and Spa
 
 Data -> 2.9G of airline data
 
+Dependencies:
+```
+pip3 install pandas, numpy, mr3px, mrjob, jupyterlab, pyspark, findspark
+```
+
+---
 
 To run mrjob localy: (args are optional, have default run defined)
 ```
