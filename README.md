@@ -5,7 +5,7 @@ Data -> 2.9G of airline data
 
 Dependencies:
 ```
-pip3 install pandas, numpy, mr3px, mrjob, jupyterlab, pyspark, findspark
+pip3 install pandas, numpy, mr3px, mrjob, jupyterlab, pyspark, findspark, matplotlib, seaborn
 ```
 
 ---
