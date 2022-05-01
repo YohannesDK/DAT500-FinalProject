@@ -9,9 +9,6 @@ import numpy as np
 from datetime import datetime
 import sys
 
-# https://stackoverflow.com/questions/37996471/element-wise-test-of-numpy-array-is-numeric
-# https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float/25299619#25299619
-
 class Find_Mean_Mode(MRJob):
     INPUT_PROTOCOL = CsvProtocol
     # OUTPUT_PROTOCOL = CsvProtocol
@@ -30,6 +27,7 @@ class Find_Mean_Mode(MRJob):
         return True
     
     def combine_categorical_counts(self, values):
+        # count number of times each value occurs
         d = {}
         for v in values:
                 if not v[0] in d:

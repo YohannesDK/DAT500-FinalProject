@@ -38,8 +38,6 @@ class Fill_Null_Vals(MRJob):
         f.close()
     
     def reducer(self, key, rows):
-        # yield None, list(self.d.items())
-        # return
         for row in rows:
             yield None, [val if val != "" else self.d[col] for col, val in zip(self.features, row)]
 

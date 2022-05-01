@@ -12,7 +12,6 @@ class Remove_Null_Vals(MRJob):
     def configure_args(self):
         super(Remove_Null_Vals, self).configure_args()
         self.add_file_arg('--cols_to_remove_path', type=str, help="Path to file containing columns to remove")
-        # self.add_passthru_arg('--count', type=int, help="Number of rows to output")
 
     def load_args(self, args):
         super(Remove_Null_Vals, self).load_args(args)
@@ -37,7 +36,6 @@ class Remove_Null_Vals(MRJob):
                 col, _ = line.split("\t")
                 col = col.replace('"', "") 
                 self.cols_idx_to_remove.add(self.features.index(col))
-                # self.cols_idx_to_remove.append(self.features.index(col))
         f.close()
     
     def reducer(self, _, rows):
